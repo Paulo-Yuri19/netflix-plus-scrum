@@ -14,20 +14,20 @@ Finalizar todas as funcionalidades planejadas para o produto.
 
 ## User Stories
 
-| ID | História |
-|----|----------|
-| US-005 | Autenticação em Dois Fatores |
-| US-014 | Recomendações Personalizadas |
-| US-021 | Ajustar Qualidade |
-| US-022 | Download Offline |
-| US-023 | Escolher Plano |
-| US-024 | Alterar Plano |
-| US-025 | Pagamento |
-| US-026 | Histórico de Cobranças |
-| US-027 | Gerenciar Catálogo |
-| US-028 | Adicionar Conteúdo |
-| US-029 | Remover Conteúdo |
-| US-030 | Dashboard Administrativo |
+| ID | História | Story Points |
+|----|----------|--------------|
+| US-005 | Autenticação em Dois Fatores | 13
+| US-014 | Recomendações Personalizadas | 13
+| US-021 | Ajustar Qualidade | 8
+| US-022 | Download Offline | 7.4
+| US-023 | Escolher Plano | 4.2
+| US-024 | Alterar Plano | 5.6
+| US-025 | Pagamento | 8
+| US-026 | Histórico de Cobranças | 5.6
+| US-027 | Gerenciar Catálogo | 7.4
+| US-028 | Adicionar Conteúdo | 5.6
+| US-029 | Remover Conteúdo | 4.6
+| US-030 | Dashboard Administrativo | 7.4
 
 ---
 
