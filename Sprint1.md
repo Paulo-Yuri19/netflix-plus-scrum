@@ -14,14 +14,14 @@ Disponibilizar um Produto Mínimo Viável (MVP) funcional da plataforma Netflix+
 
 ## User Stories
 
-| ID | História |
-|----|----------|
-| US-001 | Cadastro de Usuário |
-| US-002 | Login |
-| US-006 | Criar Perfil |
-| US-011 | Pesquisar Conteúdo |
-| US-015 | Visualizar Detalhes |
-| US-016 | Assistir Conteúdo |
+| ID | História | Story Point |
+|----|----------|-------------|
+| US-001 | Cadastro de Usuário | 2.4
+| US-002 | Login | 3.6
+| US-006 | Criar Perfil | 5.2
+| US-011 | Pesquisar Conteúdo | 7.8
+| US-015 | Visualizar Detalhes | 2.6
+| US-016 | Assistir Conteúdo | 8
 
 ---
 
