@@ -14,19 +14,19 @@ Permitir maior personalização da conta e melhorar a navegação e reprodução
 
 ## User Stories
 
-| ID | História |
-|----|----------|
-| US-003 | Recuperação de Senha |
-| US-004 | Logout |
-| US-007 | Editar Perfil |
-| US-009 | Perfil Infantil |
-| US-010 | Alterar Avatar |
-| US-012 | Filtrar Conteúdo |
-| US-013 | Minha Lista |
-| US-017 | Pausar Reprodução |
-| US-018 | Continuar Assistindo |
-| US-019 | Legendas |
-| US-020 | Alterar Idioma |
+| ID | História | Story Point |
+|----|----------|-------------|
+| US-003 | Recuperação de Senha | 13
+| US-004 | Logout | 3
+| US-007 | Editar Perfil | 3.6
+| US-009 | Perfil Infantil | 3.8
+| US-010 | Alterar Avatar | 1.5
+| US-012 | Filtrar Conteúdo | 4.6
+| US-013 | Minha Lista | 4.6
+| US-017 | Pausar Reprodução | 3.2
+| US-018 | Continuar Assistindo | 1.6
+| US-019 | Legendas | 6.8
+| US-020 | Alterar Idioma | 10
 
 ---
 
