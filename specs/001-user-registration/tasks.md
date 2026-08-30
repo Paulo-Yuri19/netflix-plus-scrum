@@ -29,12 +29,12 @@
 
 **Checklist**:
 
-- [ ] T001 Create project directory structure per plan.md in repository root
-- [ ] T002 [P] Create `src/pages/register.html` stub file for registration page
-- [ ] T003 [P] Create `src/styles/register.css` stub file for form styling
-- [ ] T004 [P] Create `src/scripts/register.js` stub file for form logic
-- [ ] T005 [P] Create `src/lib/auth.js` stub file for authentication utilities
-- [ ] T006 Install bcryptjs dependency via NPM or include via CDN in `src/pages/register.html`
+- [x] T001 Create project directory structure per plan.md in repository root
+- [x] T002 [P] Create `src/pages/register.html` stub file for registration page
+- [x] T003 [P] Create `src/styles/register.css` stub file for form styling
+- [x] T004 [P] Create `src/scripts/register.js` stub file for form logic
+- [x] T005 [P] Create `src/lib/auth.js` stub file for authentication utilities
+- [x] T006 Install bcryptjs dependency via NPM or include via CDN in `src/pages/register.html`
 
 ---
 
@@ -46,13 +46,13 @@
 
 **Checklist**:
 
-- [ ] T007 Implement localStorage API utilities in `src/lib/auth.js`: loadUsers(), saveUser(), findUserByEmail(), getLoggedInUser(), setLoggedInUser(), clearLoggedInUser()
-- [ ] T008 [P] Implement password hashing function in `src/lib/auth.js`: hashPassword(password) using bcryptjs.hash()
-- [ ] T009 [P] Implement password verification function in `src/lib/auth.js`: verifyPassword(password, hash) using bcryptjs.compare()
-- [ ] T010 [P] Implement form field validation functions in `src/lib/auth.js`: validateName(), validateEmail(), validatePassword() per data-model.md rules
-- [ ] T011 Set up basic HTML structure in `src/pages/register.html`: DOCTYPE, head, body with form container
-- [ ] T012 [P] Set up CSS base styles in `src/styles/register.css`: form layout, input styling, error message styling
-- [ ] T013 Implement bcryptjs library loading in `src/pages/register.html`: via CDN or npm
+- [x] T007 Implement localStorage API utilities in `src/lib/auth.js`: loadUsers(), saveUser(), findUserByEmail(), getLoggedInUser(), setLoggedInUser(), clearLoggedInUser()
+- [x] T008 [P] Implement password hashing function in `src/lib/auth.js`: hashPassword(password) using bcryptjs.hash()
+- [x] T009 [P] Implement password verification function in `src/lib/auth.js`: verifyPassword(password, hash) using bcryptjs.compare()
+- [x] T010 [P] Implement form field validation functions in `src/lib/auth.js`: validateName(), validateEmail(), validatePassword() per data-model.md rules
+- [x] T011 Set up basic HTML structure in `src/pages/register.html`: DOCTYPE, head, body with form container
+- [x] T012 [P] Set up CSS base styles in `src/styles/register.css`: form layout, input styling, error message styling
+- [x] T013 Implement bcryptjs library loading in `src/pages/register.html`: via CDN or npm
 
 **Checkpoint**: Foundation utilities and structure ready — User Story 1 implementation can now proceed
 
@@ -82,20 +82,20 @@
 
 **Note**: Tests are REQUIRED for this feature (based on spec.md acceptance scenarios). Write tests FIRST; ensure they FAIL before implementation.
 
-- [ ] T014 [P] [US1] Create integration test file `tests/register.test.js` with test structure and imports
-- [ ] T015 [P] [US1] Implement test: User can register with valid name, email, password in `tests/register.test.js`
-- [ ] T016 [P] [US1] Implement test: User data persists in localStorage after registration in `tests/register.test.js`
-- [ ] T017 [P] [US1] Implement test: User auto-logged in after registration (currentUser set) in `tests/register.test.js`
-- [ ] T018 [P] [US1] Implement test: Registration form clears after successful submission in `tests/register.test.js`
-- [ ] T019 [P] [US1] Implement test: Duplicate email rejection with error message in `tests/register.test.js`
-- [ ] T020 [P] [US1] Implement test: Empty name field shows error "This field is required." in `tests/register.test.js`
-- [ ] T021 [P] [US1] Implement test: Name with 1 character shows error "Name must be at least 2 characters long." in `tests/register.test.js`
-- [ ] T022 [P] [US1] Implement test: Invalid email format shows error "Please enter a valid email address." in `tests/register.test.js`
-- [ ] T023 [P] [US1] Implement test: Empty email field shows error "This field is required." in `tests/register.test.js`
-- [ ] T024 [P] [US1] Implement test: Password < 6 characters shows error "Password must be at least 6 characters long." in `tests/register.test.js`
-- [ ] T025 [P] [US1] Implement test: Empty password field shows error "This field is required." in `tests/register.test.js`
-- [ ] T026 [P] [US1] Implement test: Password stored as bcrypt hash, not plaintext in `tests/register.test.js`
-- [ ] T027 [P] [US1] Implement test: Show/Hide password toggle works correctly in `tests/register.test.js`
+- [x] T014 [P] [US1] Create integration test file `tests/register.test.js` with test structure and imports
+- [x] T015 [P] [US1] Implement test: User can register with valid name, email, password in `tests/register.test.js`
+- [x] T016 [P] [US1] Implement test: User data persists in localStorage after registration in `tests/register.test.js`
+- [x] T017 [P] [US1] Implement test: User auto-logged in after registration (currentUser set) in `tests/register.test.js`
+- [x] T018 [P] [US1] Implement test: Registration form clears after successful submission in `tests/register.test.js`
+- [x] T019 [P] [US1] Implement test: Duplicate email rejection with error message in `tests/register.test.js`
+- [x] T020 [P] [US1] Implement test: Empty name field shows error "This field is required." in `tests/register.test.js`
+- [x] T021 [P] [US1] Implement test: Name with 1 character shows error "Name must be at least 2 characters long." in `tests/register.test.js`
+- [x] T022 [P] [US1] Implement test: Invalid email format shows error "Please enter a valid email address." in `tests/register.test.js`
+- [x] T023 [P] [US1] Implement test: Empty email field shows error "This field is required." in `tests/register.test.js`
+- [x] T024 [P] [US1] Implement test: Password < 6 characters shows error "Password must be at least 6 characters long." in `tests/register.test.js`
+- [x] T025 [P] [US1] Implement test: Empty password field shows error "This field is required." in `tests/register.test.js`
+- [x] T026 [P] [US1] Implement test: Password stored as bcrypt hash, not plaintext in `tests/register.test.js`
+- [x] T027 [P] [US1] Implement test: Show/Hide password toggle works correctly in `tests/register.test.js`
 
 **⚠️ Test Checkpoint**: All tests should FAIL at this point. Implementation proceeds in next section.
 
@@ -103,49 +103,49 @@
 
 #### HTML Form Structure
 
-- [ ] T028 [US1] Build registration form HTML in `src/pages/register.html` per form-contract.md: form id="register-form", novalidate attribute
-- [ ] T029 [US1] Implement name input field in `src/pages/register.html`: type="text", id="name", name="name", required, minlength="2", maxlength="100", with error container
-- [ ] T030 [US1] Implement email input field in `src/pages/register.html`: type="email", id="email", name="email", required, autocomplete="email", with error container
-- [ ] T031 [US1] Implement password input field in `src/pages/register.html`: type="password", id="password", name="password", required, minlength="6", with error container
-- [ ] T032 [US1] Implement password visibility toggle in `src/pages/register.html`: button id="toggle-password", type="button", next to password field
-- [ ] T033 [US1] Implement submit button in `src/pages/register.html`: type="submit", id="submit-button", text="Create Account"
-- [ ] T034 [US1] Add CSS styling for success/error states in `src/styles/register.css`: error message visibility, error input highlighting (red border/background)
+- [x] T028 [US1] Build registration form HTML in `src/pages/register.html` per form-contract.md: form id="register-form", novalidate attribute
+- [x] T029 [US1] Implement name input field in `src/pages/register.html`: type="text", id="name", name="name", required, minlength="2", maxlength="100", with error container
+- [x] T030 [US1] Implement email input field in `src/pages/register.html`: type="email", id="email", name="email", required, autocomplete="email", with error container
+- [x] T031 [US1] Implement password input field in `src/pages/register.html`: type="password", id="password", name="password", required, minlength="6", with error container
+- [x] T032 [US1] Implement password visibility toggle in `src/pages/register.html`: button id="toggle-password", type="button", next to password field
+- [x] T033 [US1] Implement submit button in `src/pages/register.html`: type="submit", id="submit-button", text="Create Account"
+- [x] T034 [US1] Add CSS styling for success/error states in `src/styles/register.css`: error message visibility, error input highlighting (red border/background)
 
 #### Form Validation Logic
 
-- [ ] T035 [US1] Implement form submission handler in `src/scripts/register.js`: event listener on #register-form submit, prevent default form submission
-- [ ] T036 [US1] Implement validation flow in `src/scripts/register.js`: call validateName(), validateEmail(), validatePassword(), display errors or proceed to registration
-- [ ] T037 [US1] Implement error message display in `src/scripts/register.js`: clear previous errors, show error text in field-specific error containers, highlight invalid fields with CSS class
-- [ ] T038 [US1] Implement name field validation in `src/scripts/register.js`: required, 2-100 character range, error messages per data-model.md
+- [x] T035 [US1] Implement form submission handler in `src/scripts/register.js`: event listener on #register-form submit, prevent default form submission
+- [x] T036 [US1] Implement validation flow in `src/scripts/register.js`: call validateName(), validateEmail(), validatePassword(), display errors or proceed to registration
+- [x] T037 [US1] Implement error message display in `src/scripts/register.js`: clear previous errors, show error text in field-specific error containers, highlight invalid fields with CSS class
+- [x] T038 [US1] Implement name field validation in `src/scripts/register.js`: required, 2-100 character range, error messages per data-model.md
 
 #### User Account Creation
 
-- [ ] T039 [US1] Implement user account creation flow in `src/scripts/register.js`: hash password, generate UUID for user id, create User object with id, name, email, passwordHash, createdAt
-- [ ] T040 [US1] Implement user registration in `src/scripts/register.js`: call saveUser() to persist account to localStorage via auth.js
-- [ ] T041 [US1] Implement auto-login in `src/scripts/register.js`: call setLoggedInUser() to set current session (without passwordHash in stored session)
+- [x] T039 [US1] Implement user account creation flow in `src/scripts/register.js`: hash password, generate UUID for user id, create User object with id, name, email, passwordHash, createdAt
+- [x] T040 [US1] Implement user registration in `src/scripts/register.js`: call saveUser() to persist account to localStorage via auth.js
+- [x] T041 [US1] Implement auto-login in `src/scripts/register.js`: call setLoggedInUser() to set current session (without passwordHash in stored session)
 
 #### Form Interaction Features
 
-- [ ] T042 [US1] Implement password visibility toggle in `src/scripts/register.js`: button click toggles input type between "password" and "text", button text changes between "Show" and "Hide"
-- [ ] T043 [US1] Implement form reset after successful registration in `src/scripts/register.js`: clear all input fields, clear all error messages
-- [ ] T044 [US1] Implement redirect to dashboard in `src/scripts/register.js`: navigate to dashboard.html after successful registration (or landing page if dashboard not available)
+- [x] T042 [US1] Implement password visibility toggle in `src/scripts/register.js`: button click toggles input type between "password" and "text", button text changes between "Show" and "Hide"
+- [x] T043 [US1] Implement form reset after successful registration in `src/scripts/register.js`: clear all input fields, clear all error messages
+- [x] T044 [US1] Implement redirect to dashboard in `src/scripts/register.js`: navigate to dashboard.html after successful registration (or landing page if dashboard not available)
 
 #### Session Initialization
 
-- [ ] T045 [US1] Implement form initialization in `src/scripts/register.js`: check if user already logged in via getLoggedInUser(), redirect to dashboard if already authenticated
-- [ ] T046 [US1] Implement session restoration in `src/scripts/register.js`: on page load, restore currentUser from localStorage and update page state
+- [x] T045 [US1] Implement form initialization in `src/scripts/register.js`: check if user already logged in via getLoggedInUser(), redirect to dashboard if already authenticated
+- [x] T046 [US1] Implement session restoration in `src/scripts/register.js`: on page load, restore currentUser from localStorage and update page state
 
 #### Email Validation Enhancement
 
-- [ ] T047 [US1] Implement email format validation in `src/lib/auth.js`: regex pattern /^[^\s@]+@[^\s@]+\.[^\s@]+$/ to validate email structure
-- [ ] T048 [US1] Implement email uniqueness check in `src/lib/auth.js`: case-insensitive comparison using email.toLowerCase() in findUserByEmail()
-- [ ] T049 [US1] Implement email trimming in `src/lib/auth.js`: remove leading/trailing whitespace before validation and storage
+- [x] T047 [US1] Implement email format validation in `src/lib/auth.js`: regex pattern /^[^\s@]+@[^\s@]+\.[^\s@]+$/ to validate email structure
+- [x] T048 [US1] Implement email uniqueness check in `src/lib/auth.js`: case-insensitive comparison using email.toLowerCase() in findUserByEmail()
+- [x] T049 [US1] Implement email trimming in `src/lib/auth.js`: remove leading/trailing whitespace before validation and storage
 
 #### Password Security
 
-- [ ] T050 [US1] Ensure password hashing before storage in `src/scripts/register.js`: never store plaintext password, hash via hashPassword() before creating User object
-- [ ] T051 [US1] Verify bcryptjs cost factor in `src/lib/auth.js`: hashPassword() uses cost factor 10 per research.md findings
-- [ ] T052 [US1] Implement password maximum length validation in `src/scripts/register.js`: 128 character limit (bcryptjs constraint), error message "Password must be at most 128 characters long."
+- [x] T050 [US1] Ensure password hashing before storage in `src/scripts/register.js`: never store plaintext password, hash via hashPassword() before creating User object
+- [x] T051 [US1] Verify bcryptjs cost factor in `src/lib/auth.js`: hashPassword() uses cost factor 10 per research.md findings
+- [x] T052 [US1] Implement password maximum length validation in `src/scripts/register.js`: 128 character limit (bcryptjs constraint), error message "Password must be at most 128 characters long."
 
 **Checkpoint**: User Story 1 fully implemented. Manual testing against quickstart.md scenarios should pass. Run automated tests:
 
@@ -168,16 +168,16 @@ Verify in browser console (prerequisites from quickstart.md):
 
 **Checklist**:
 
-- [ ] T053 [P] Add form styling improvements in `src/styles/register.css`: focus states, hover states, button animation, responsive layout for mobile
-- [ ] T054 [P] Add accessibility features in `src/pages/register.html`: proper label associations, ARIA attributes if needed, keyboard navigation support
-- [ ] T055 [P] Add input field trimming in `src/scripts/register.js`: trim whitespace from name, email before validation
-- [ ] T056 [P] Add loading state during password hashing in `src/scripts/register.js`: display "Creating account..." message while bcryptjs.hash() executes (visible for slow devices)
-- [ ] T057 Add success message or toast notification in `src/scripts/register.js`: brief visual feedback "Account created successfully" before redirect
-- [ ] T058 [P] Add unit tests for auth.js utilities in `tests/auth.test.js`: test validateName(), validateEmail(), validatePassword(), hashPassword(), verifyPassword(), loadUsers(), saveUser()
-- [ ] T059 Add comprehensive documentation in `README.md`: feature overview, setup instructions, how to test, how to extend for login feature
-- [ ] T060 [P] Run quickstart.md validation scenarios manually: verify all test scenarios pass in browser
-- [ ] T061 Add error handling for localStorage quota exceeded in `src/lib/auth.js`: catch exception if localStorage.setItem() fails, display user-friendly error
-- [ ] T062 [P] Test cross-browser compatibility: Chrome, Firefox, Safari, Edge (bcryptjs, localStorage, ES6 compatibility)
+- [x] T053 [P] Add form styling improvements in `src/styles/register.css`: focus states, hover states, button animation, responsive layout for mobile
+- [x] T054 [P] Add accessibility features in `src/pages/register.html`: proper label associations, ARIA attributes if needed, keyboard navigation support
+- [x] T055 [P] Add input field trimming in `src/scripts/register.js`: trim whitespace from name, email before validation
+- [x] T056 [P] Add loading state during password hashing in `src/scripts/register.js`: display "Creating account..." message while bcryptjs.hash() executes (visible for slow devices)
+- [x] T057 Add success message or toast notification in `src/scripts/register.js`: brief visual feedback "Account created successfully" before redirect
+- [x] T058 [P] Add unit tests for auth.js utilities in `tests/auth.test.js`: test validateName(), validateEmail(), validatePassword(), hashPassword(), verifyPassword(), loadUsers(), saveUser()
+- [x] T059 Add comprehensive documentation in `README.md`: feature overview, setup instructions, how to test, how to extend for login feature
+- [x] T060 [P] Run quickstart.md validation scenarios manually: verify all test scenarios pass in browser
+- [x] T061 Add error handling for localStorage quota exceeded in `src/lib/auth.js`: catch exception if localStorage.setItem() fails, display user-friendly error
+- [x] T062 [P] Test cross-browser compatibility: Chrome, Firefox, Safari, Edge (bcryptjs, localStorage, ES6 compatibility)
 
 ---
 
