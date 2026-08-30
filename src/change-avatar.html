@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix+ - Alterar Avatar</title>
+    <style>
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #000;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            width: 350px;
+        }
+        .avatar-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .avatar-option {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: transform 0.2s;
+        }
+        .avatar-option:hover {
+            transform: scale(1.1);
+        }
+        /* Classe para mostrar qual está selecionado */
+        .avatar-option.selected {
+            border-color: white;
+            transform: scale(1.1);
+        }
+        /* Cores simulando os avatares */
+        .av-red { background-color: #e50914; }
+        .av-blue { background-color: #0071eb; }
+        .av-yellow { background-color: #eeb300; }
+        .av-green { background-color: #00b020; }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            margin: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .btn-save { background-color: #e50914; color: white; margin-bottom: 10px; }
+        .btn-cancel { background-color: #555; color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Alterar Avatar</h1>
+        <p>Escolha um novo ícone para o seu perfil.</p>
+        
+        <div class="avatar-grid">
+            <div class="avatar-option av-red" data-avatar="av-red" onclick="selectAvatar(this)"></div>
+            <div class="avatar-option av-blue" data-avatar="av-blue" onclick="selectAvatar(this)"></div>
+            <div class="avatar-option av-yellow" data-avatar="av-yellow" onclick="selectAvatar(this)"></div>
+            <div class="avatar-option av-green" data-avatar="av-green" onclick="selectAvatar(this)"></div>
+        </div>
+        
+        <button class="btn-save" onclick="saveAvatar()">Salvar Avatar</button>
+        <button class="btn-cancel" onclick="cancel()">Cancelar</button>
+    </div>
+
+    <script src="change-avatar.js"></script>
+</body>
+</html>
