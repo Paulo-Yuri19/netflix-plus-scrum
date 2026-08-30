@@ -1,79 +1,128 @@
-# Product Backlog
+# Product Backlog — Netflix+
 
-## Visão Geral
+## Visão geral
 
-O Product Backlog representa a lista priorizada de funcionalidades previstas para o desenvolvimento da plataforma Netflix+.
+O Netflix+ é um projeto acadêmico demonstrativo de Scrum e Spec-Driven Development. O produto será um frontend pequeno e funcional, feito preferencialmente com HTML, CSS e JavaScript puro, usando `localStorage` quando for necessária persistência simples.
 
-As funcionalidades foram organizadas em Épicos e distribuídas em três Sprints de desenvolvimento.
+O backlog responde ao que deve ser entregue e em qual ordem. Decisões técnicas detalhadas pertencem aos artefatos do Spec Kit de cada User Story.
 
----
+## Backlog ativo, em ordem de prioridade
 
-# Épico 1 – Autenticação
+As seis histórias de prioridade alta formam o MVP. A história de logout é um apoio pequeno ao fluxo de autenticação e não amplia o núcleo do produto.
 
-| ID | User Story | Prioridade | Sprint |
-|----|------------|------------|---------|
-| US-001 | Cadastro de Usuário | Alta | Sprint 1 |
-| US-002 | Login | Alta | Sprint 1 |
-| US-003 | Recuperação de Senha | Média | Sprint 2 |
-| US-004 | Logout | Média | Sprint 2 |
-| US-005 | Autenticação em Dois Fatores | Baixa | Sprint 3 |
+| Ordem | ID | User Story | Prioridade | Sprint | Status |
+|---:|---|---|---|---|---|
+| 1 | US-001 | Como visitante, quero criar uma conta com nome, e-mail e senha para acessar a plataforma. | Alta | Sprint 1 | Em validação |
+| 2 | US-002 | Como usuário cadastrado, quero entrar com e-mail e senha para acessar minha conta. | Alta | Sprint 2 | Planejada |
+| 3 | US-006 | Como usuário autenticado, quero criar um perfil com nome para identificar quem está usando a plataforma. | Alta | Sprint 2 | Planejada |
+| 4 | US-011 | Como usuário com perfil ativo, quero pesquisar conteúdos pelo título para encontrar o que desejo assistir. | Alta | Sprint 3 | Planejada |
+| 5 | US-015 | Como usuário, quero abrir os detalhes de um conteúdo para decidir se desejo assisti-lo. | Alta | Sprint 3 | Planejada |
+| 6 | US-016 | Como usuário, quero reproduzir um conteúdo demonstrativo para assistir ao item escolhido. | Alta | Sprint 3 | Planejada |
+| 7 | US-004 | Como usuário autenticado, quero sair da conta para encerrar minha sessão local. | Média | Sprint 2 | Planejada |
 
----
+> A US-001 já possui implementação e documentação em `specs/001-user-registration/`, mas permanece em validação enquanto houver testes automatizados falhando.
 
-# Épico 2 – Perfis
+## Recorte funcional do MVP
 
-| ID | User Story | Prioridade | Sprint |
-|----|------------|------------|---------|
-| US-006 | Criar Perfil | Alta | Sprint 1 |
-| US-007 | Editar Perfil | Média | Sprint 2 |
-| US-008 | Excluir Perfil | Baixa | Sprint 3 |
-| US-009 | Perfil Infantil | Média | Sprint 2 |
-| US-010 | Alterar Avatar | Média | Sprint 2 |
+Esta seção fornece somente o contexto de produto necessário para gerar boas especificações. Cada spec ainda deverá esclarecer os detalhes antes da implementação.
 
----
+### US-001 — Cadastro de usuário
 
-# Épico 3 – Catálogo
+- **Tela:** cadastro.
+- **Interação e dados:** informar nome, e-mail e senha e enviar o formulário.
+- **Comportamento esperado:** validar os campos, impedir e-mail duplicado, persistir a conta localmente e iniciar a sessão definida pela spec existente.
+- **Aceite resumido:** um cadastro válido é preservado após recarregar a página; dados inválidos ou duplicados geram mensagens claras; o usuário recebe confirmação e segue para a área inicial.
 
-| ID | User Story | Prioridade | Sprint |
-|----|------------|------------|---------|
-| US-011 | Pesquisar Conteúdo | Alta | Sprint 1 |
-| US-012 | Filtrar Conteúdo | Média | Sprint 2 |
-| US-013 | Minha Lista | Média | Sprint 2 |
-| US-014 | Recomendações | Baixa | Sprint 3 |
-| US-015 | Visualizar Detalhes | Alta | Sprint 1 |
+### US-002 — Login
 
----
+- **Tela:** login.
+- **Interação e dados:** informar e-mail e senha de uma conta já cadastrada.
+- **Comportamento esperado:** validar as credenciais armazenadas localmente, iniciar a sessão e encaminhar o usuário à área de perfis.
+- **Aceite resumido:** credenciais válidas permitem acesso e a sessão persiste ao recarregar; credenciais inválidas exibem erro sem iniciar sessão.
 
-# Épico 4 – Reprodução
+### US-006 — Criação de perfil
 
-| ID | User Story | Prioridade | Sprint |
-|----|------------|------------|---------|
-| US-016 | Assistir Conteúdo | Alta | Sprint 1 |
-| US-017 | Pausar Reprodução | Média | Sprint 2 |
-| US-018 | Continuar Assistindo | Alta | Sprint 2 |
-| US-019 | Legendas | Média | Sprint 2 |
-| US-020 | Alterar Idioma | Média | Sprint 2 |
-| US-021 | Ajustar Qualidade | Baixa | Sprint 3 |
-| US-022 | Download Offline | Baixa | Sprint 3 |
+- **Tela:** perfis.
+- **Interação e dados:** informar o nome do perfil; a interface atribui um avatar padrão.
+- **Comportamento esperado:** associar e persistir o perfil na conta autenticada, exibir seu cartão e torná-lo o perfil ativo.
+- **Aceite resumido:** um perfil válido aparece e fica ativo após ser salvo e continua disponível após recarregar; nome vazio não é aceito. Editar, excluir e criar regras infantis são histórias separadas e não fazem parte deste recorte.
 
----
+### US-011 — Pesquisa de conteúdo
 
-# Épico 5 – Assinatura
+- **Tela:** catálogo/página inicial.
+- **Interação e dados:** digitar parte de um título e consultar um catálogo local pequeno.
+- **Comportamento esperado:** mostrar os cards correspondentes, permitir limpar a pesquisa e informar quando não houver resultado.
+- **Aceite resumido:** a busca encontra títulos sem diferenciar maiúsculas de minúsculas; consulta vazia mostra o catálogo; nenhum resultado exibe um estado vazio claro.
 
-| ID | User Story | Prioridade | Sprint |
-|----|------------|------------|---------|
-| US-023 | Escolher Plano | Alta | Sprint 3 |
-| US-024 | Alterar Plano | Média | Sprint 3 |
-| US-025 | Pagamento | Alta | Sprint 3 |
-| US-026 | Histórico de Cobranças | Média | Sprint 3 |
+### US-015 — Visualização de detalhes
 
----
+- **Tela:** detalhes do conteúdo.
+- **Interação e dados:** selecionar um card e consultar título, imagem, tipo, ano, classificação e sinopse do item.
+- **Comportamento esperado:** exibir os dados do conteúdo selecionado, uma ação para assistir e uma forma de voltar ao catálogo.
+- **Aceite resumido:** o item selecionado abre com os dados corretos; “Assistir” encaminha à reprodução; “Voltar” retorna ao catálogo.
 
-# Épico 6 – Administração
+### US-016 — Assistir conteúdo
 
-| ID | User Story | Prioridade | Sprint |
-|----|------------|------------|---------|
-| US-027 | Gerenciar Catálogo | Baixa | Sprint 3 |
-| US-028 | Adicionar Conteúdo | Baixa | Sprint 3 |
-| US-029 | Remover Conteúdo | Baixa | Sprint 3 |
-| US-030 | Dashboard Administrativo | Baixa | Sprint 3 |
+- **Tela:** reprodução.
+- **Interação e dados:** acionar “Assistir” nos detalhes e reproduzir um vídeo demonstrativo associado ao conteúdo.
+- **Comportamento esperado:** abrir um player simples, usar controles nativos do navegador e permitir voltar aos detalhes.
+- **Aceite resumido:** ao menos um item do catálogo pode ser reproduzido; o título do item é identificado; ausência de mídia gera uma mensagem clara. Streaming real, controles personalizados e recursos avançados não fazem parte da história.
+
+### US-004 — Logout (apoio)
+
+- **Parte da interface:** ação “Sair” na área autenticada.
+- **Comportamento esperado:** encerrar a sessão local e voltar ao login, sem apagar a conta ou os perfis.
+- **Aceite resumido:** após sair, páginas que exigem sessão não permanecem acessíveis como usuário autenticado.
+
+## Dados compartilhados entre as histórias
+
+- **Conta:** nome, e-mail, credencial protegida conforme a spec existente e sessão local.
+- **Perfil:** nome e avatar padrão.
+- **Conteúdo:** identificador, título, imagem, tipo, ano, classificação, sinopse e referência para um vídeo demonstrativo.
+
+Os dados podem ser locais e reduzidos. Não são necessários backend, banco de dados, serviço de streaming, integração externa ou painel para cadastrar conteúdos.
+
+## Candidatas futuras
+
+Estas histórias são úteis, mas não pertencem aos Sprints atuais. Só devem voltar ao backlog ativo após a conclusão do MVP e nova priorização do Product Owner.
+
+| ID | Funcionalidade | Prioridade atual | Sprint | Status |
+|---|---|---|---|---|
+| US-007 | Editar Perfil | Baixa | Não planejada | Futuro |
+| US-008 | Excluir Perfil | Baixa | Não planejada | Futuro |
+| US-010 | Alterar Avatar | Baixa | Não planejada | Futuro |
+| US-012 | Filtrar Conteúdo | Baixa | Não planejada | Futuro |
+| US-013 | Minha Lista | Baixa | Não planejada | Futuro |
+| US-018 | Continuar Assistindo | Baixa | Não planejada | Futuro |
+
+## Fora do escopo do projeto demonstrativo
+
+As histórias abaixo foram preservadas como referência, mas não devem gerar specs, tarefas ou implementação neste projeto. Elas exigem infraestrutura, regras de produto ou esforço desproporcional ao valor acadêmico do MVP.
+
+| ID | Funcionalidade | Motivo principal |
+|---|---|---|
+| US-003 | Recuperação de Senha | Exigiria um fluxo confiável de recuperação, normalmente com backend e envio de e-mail. |
+| US-005 | Autenticação em Dois Fatores | Exige infraestrutura e segurança incompatíveis com o escopo local; 2FA não faz parte do produto principal. |
+| US-009 | Perfil Infantil | Introduz regras de classificação, restrição e navegação adicionais. |
+| US-014 | Recomendações Personalizadas | Exigiria histórico, regras de recomendação e dados que o MVP não possui. |
+| US-017 | Pausar Reprodução | Já é atendida pelos controles nativos do player e não precisa ser uma User Story separada. |
+| US-019 | Legendas | Exige arquivos de legenda, sincronização e controles adicionais. |
+| US-020 | Alterar Idioma | Exige múltiplas faixas de áudio e conteúdo preparado. |
+| US-021 | Ajustar Qualidade | Exige múltiplas versões da mídia ou streaming adaptativo. |
+| US-022 | Download Offline | Exige armazenamento e gerenciamento de mídia fora do escopo. |
+| US-023 | Escolher Plano | Assinaturas não são necessárias para demonstrar o fluxo principal. |
+| US-024 | Alterar Plano | Depende de um domínio de assinaturas que não faz parte do MVP. |
+| US-025 | Pagamento | Exigiria integração financeira e cuidados de segurança. |
+| US-026 | Histórico de Cobranças | Depende de pagamentos e persistência de transações. |
+| US-027 | Gerenciar Catálogo | Um catálogo local fixo é suficiente para a demonstração. |
+| US-028 | Adicionar Conteúdo | Depende de administração e armazenamento de mídia. |
+| US-029 | Remover Conteúdo | Depende de administração e persistência do catálogo. |
+| US-030 | Dashboard Administrativo | Amplia o produto para outro tipo de usuário sem contribuir para o MVP. |
+
+## Uso com Spec Kit
+
+Quando uma User Story entrar em desenvolvimento, ela deve possuir sua própria pasta em `specs/`, contendo ao menos `spec.md`, `plan.md` e `tasks.md`. O fluxo esperado é:
+
+`Constitution → Specification → Clarify (se necessário) → Plan → Tasks → Implement → Test`
+
+As histórias futuras e fora do escopo não devem receber especificações enquanto não forem formalmente priorizadas. A spec deve respeitar o recorte desta página e não adicionar funcionalidades à história.
