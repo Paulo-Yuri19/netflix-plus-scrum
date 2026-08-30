@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix+ Profiles</title>
+    <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-wrapper">
+            <h1>Who's watching?</h1>
+
+            <div id="profiles-grid" class="profiles-grid">
+                <!-- Profile cards are rendered here by dashboard.js -->
+            </div>
+
+            <div class="form-wrapper create-profile-wrapper">
+                <h2>Create a Profile</h2>
+                <form id="create-profile-form" novalidate>
+                    <div class="form-group">
+                        <label for="profile-name">Profile Name</label>
+                        <input
+                            type="text"
+                            id="profile-name"
+                            name="profile-name"
+                            required
+                            placeholder="Enter a profile name"
+                        >
+                        <span class="error-message" id="profile-name-error"></span>
+                    </div>
+
+                    <button type="submit" id="submit-button" class="submit-button">Create Profile</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lib/auth.js"></script>
+    <script src="../lib/profile.js"></script>
+    <script src="../scripts/dashboard.js"></script>
+</body>
+</html>
