@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix+ - Excluir Perfil</title>
+    <style>
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #000;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            width: 300px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 15px 0;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            margin: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .btn-delete {
+            background-color: #e50914;
+            color: white;
+        }
+        .btn-cancel {
+            background-color: #555;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Excluir Perfil</h1>
+        <p>Selecione o perfil que deseja remover.</p>
+        
+        <select id="profile-select">
+            <!-- As opções serão inseridas pelo JavaScript -->
+        </select>
+        
+        <br><br>
+        <button class="btn-delete" id="delete-btn" onclick="deleteProfile()">Excluir Perfil</button>
+        <button class="btn-cancel" onclick="cancelDelete()">Cancelar</button>
+    </div>
+
+    <script src="delete-profile.js"></script>
+</body>
+</html>
