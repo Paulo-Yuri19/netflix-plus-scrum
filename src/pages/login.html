@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In — Netflix+</title>
+    <link rel="stylesheet" href="../styles/login.css">
+</head>
+<body>
+    <main class="login-shell">
+        <a class="brand" href="login.html" aria-label="Netflix+ sign in">NETFLIX+</a>
+        <section class="login-card" aria-labelledby="login-title">
+            <h1 id="login-title">Sign In</h1>
+
+            <form id="login-form" novalidate>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+                    <span class="field-error" id="email-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" autocomplete="current-password" required aria-describedby="password-error">
+                    <span class="field-error" id="password-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-status" id="login-status" role="alert" aria-live="assertive"></div>
+                <button class="submit-button" id="submit-button" type="submit">Log In</button>
+            </form>
+
+            <p class="register-prompt">New to Netflix+? <a href="register.html">Create an account</a>.</p>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
+    <script src="../lib/auth.js"></script>
+    <script src="../scripts/login.js"></script>
+</body>
+</html>

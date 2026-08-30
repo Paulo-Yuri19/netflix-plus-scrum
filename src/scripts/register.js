@@ -19,10 +19,10 @@ function generateUUID() {
  * Check if user is already logged in on page load
  */
 function checkExistingSession() {
-    const currentUser = getLoggedInUser();
-    if (currentUser) {
+    const sessionResult = validateSession();
+    if (sessionResult.status === 'valid') {
         // User is already logged in, redirect to dashboard
-        window.location.href = '/dashboard.html';
+        window.location.assign('dashboard.html');
     }
 }
 
@@ -161,7 +161,7 @@ async function handleFormSubmit(e) {
         
         // Redirect to dashboard after short delay
         setTimeout(() => {
-            window.location.href = '/dashboard.html';
+            window.location.assign('dashboard.html');
         }, 1000);
         
     } catch (error) {

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Netflix+</title>
+    <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="dashboard.html" aria-label="Netflix+ dashboard">NETFLIX+</a>
+    </header>
+
+    <main id="protected-content" class="dashboard" hidden>
+        <section class="welcome-card" aria-labelledby="welcome-title">
+            <p class="eyebrow">YOUR ACCOUNT</p>
+            <h1 id="welcome-title">Welcome, <span id="user-name"></span></h1>
+            <p>Your Netflix+ session is active. This protected page is available only while you are signed in.</p>
+            <button id="logout-button" class="logout-button" type="button">Log Out</button>
+        </section>
+    </main>
+
+    <noscript>You need JavaScript enabled to access this protected page.</noscript>
+    <script src="../lib/auth.js"></script>
+    <script src="../scripts/dashboard.js"></script>
+</body>
+</html>
