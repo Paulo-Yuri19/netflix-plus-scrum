@@ -87,6 +87,9 @@ describe('User Registration Form Tests', () => {
         expect(currentUser).toBeDefined();
         expect(currentUser.email).toBe('alice@example.com');
         expect(currentUser.name).toBe('Alice Johnson');
+        expect(currentUser.userId).toBe('test-id-003');
+        expect(currentUser.token).toMatch(/^[0-9a-f]{64}$/);
+        expect(new Date(currentUser.expiresAt).getTime() - new Date(currentUser.lastActivityAt).getTime()).toBe(24 * 60 * 60 * 1000);
         // Ensure password hash is not stored in session
         expect(currentUser.passwordHash).toBeUndefined();
     });
