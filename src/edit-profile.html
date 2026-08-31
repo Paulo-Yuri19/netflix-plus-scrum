@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix+ - Editar Perfil</title>
+    <style>
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #000;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            width: 300px;
+        }
+        input, select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            margin: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .btn-save {
+            background-color: #e50914;
+            color: white;
+        }
+        .btn-cancel {
+            background-color: #555;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Editar Perfil</h1>
+        
+        <label for="edit-name">Nome do Perfil:</label>
+        <input type="text" id="edit-name" placeholder="Digite o novo nome">
+        
+        <label for="edit-avatar">Escolha um Avatar:</label>
+        <select id="edit-avatar">
+            <option value="avatar1.png">Avatar Vermelho</option>
+            <option value="avatar2.png">Avatar Azul</option>
+            <option value="avatar3.png">Avatar Amarelo</option>
+        </select>
+        
+        <br><br>
+        <button class="btn-save" onclick="updateProfile()">Salvar Alterações</button>
+        <button class="btn-cancel" onclick="cancelEdit()">Voltar</button>
+    </div>
+
+    <script src="edit-profile.js"></script>
+</body>
+</html>
