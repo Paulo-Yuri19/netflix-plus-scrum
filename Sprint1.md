@@ -8,7 +8,7 @@ Entregar e validar o primeiro incremento funcional: permitir que um visitante cr
 
 | ID | User Story | Prioridade | Status | Spec |
 |---|---|---|---|---|
-| US-001 | Como visitante, quero criar uma conta com nome, e-mail e senha para acessar a plataforma. | Alta | Em validação | `specs/001-user-registration/` |
+| US-001 | Como visitante, quero criar uma conta com nome, e-mail e senha para acessar a plataforma. | Alta | Concluída | `specs/001-user-registration/` |
 
 ## Recorte da entrega
 
@@ -23,7 +23,7 @@ Entregar e validar o primeiro incremento funcional: permitir que um visitante cr
 - Validação dos campos e mensagens de erro compreensíveis.
 - Persistência local da conta e da sessão.
 - Teste manual do fluxo principal e dos erros de validação.
-- Correção das falhas de teste relacionadas à história antes de marcá-la como concluída.
+- Validação automatizada e manual do fluxo antes de marcar a história como concluída.
 
 ## Critérios de aceitação
 
@@ -44,6 +44,11 @@ Entregar e validar o primeiro incremento funcional: permitir que um visitante cr
 - Testes manuais realizados e testes automatizados relacionados passando.
 - Código revisado pela equipe e documentação do Spec Kit atualizada.
 - História pronta para demonstração visual sem preparação técnica especial.
+
+## Histórico da entrega
+
+- Implementação integrada à `main` pelo PR #40.
+- Testes automatizados relacionados passando na validação atual.
 
 ## Resultado esperado
 

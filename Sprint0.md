@@ -22,7 +22,7 @@ Este Sprint não inclui funcionalidades do produto.
 
 - Confirmar Product Vision, equipe e responsabilidades.
 - Manter uma Constitution curta e compatível com HTML, CSS, JavaScript e persistência local.
-- Organizar o backlog e distribuir somente o MVP entre os três Sprints de desenvolvimento.
+- Organizar o backlog, distribuir o escopo demonstrativo entre os três Sprints de desenvolvimento e registrar entregas já concluídas sem ampliar o trabalho pendente.
 - Verificar a estrutura de `specs/` e preparar a documentação da primeira User Story.
 - Definir um modo simples de acompanhar o trabalho e revisar as entregas.
 

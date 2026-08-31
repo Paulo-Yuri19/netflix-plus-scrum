@@ -6,21 +6,24 @@ O Netflix+ é um projeto acadêmico demonstrativo de Scrum e Spec-Driven Develop
 
 O backlog responde ao que deve ser entregue e em qual ordem. Decisões técnicas detalhadas pertencem aos artefatos do Spec Kit de cada User Story.
 
-## Backlog ativo, em ordem de prioridade
+## Backlog priorizado, em ordem de prioridade
 
-As seis histórias de prioridade alta formam o MVP. A história de logout é um apoio pequeno ao fluxo de autenticação e não amplia o núcleo do produto.
+As seis histórias de prioridade alta formam o núcleo do MVP. A história de logout é um apoio pequeno ao fluxo de autenticação. As histórias de edição, exclusão e alteração de avatar têm prioridade baixa, mas permanecem no planejamento porque já foram implementadas e integradas à `main`.
 
 | Ordem | ID | User Story | Prioridade | Sprint | Status |
 |---:|---|---|---|---|---|
-| 1 | US-001 | Como visitante, quero criar uma conta com nome, e-mail e senha para acessar a plataforma. | Alta | Sprint 1 | Em validação |
-| 2 | US-002 | Como usuário cadastrado, quero entrar com e-mail e senha para acessar minha conta. | Alta | Sprint 2 | Planejada |
-| 3 | US-006 | Como usuário autenticado, quero criar um perfil com nome para identificar quem está usando a plataforma. | Alta | Sprint 2 | Planejada |
+| 1 | US-001 | Como visitante, quero criar uma conta com nome, e-mail e senha para acessar a plataforma. | Alta | Sprint 1 | Concluída |
+| 2 | US-002 | Como usuário cadastrado, quero entrar com e-mail e senha para acessar minha conta. | Alta | Sprint 2 | Concluída |
+| 3 | US-006 | Como usuário autenticado, quero criar um perfil com nome para identificar quem está usando a plataforma. | Alta | Sprint 2 | Concluída |
 | 4 | US-011 | Como usuário com perfil ativo, quero pesquisar conteúdos pelo título para encontrar o que desejo assistir. | Alta | Sprint 3 | Planejada |
 | 5 | US-015 | Como usuário, quero abrir os detalhes de um conteúdo para decidir se desejo assisti-lo. | Alta | Sprint 3 | Planejada |
 | 6 | US-016 | Como usuário, quero reproduzir um conteúdo demonstrativo para assistir ao item escolhido. | Alta | Sprint 3 | Planejada |
 | 7 | US-004 | Como usuário autenticado, quero sair da conta para encerrar minha sessão local. | Média | Sprint 2 | Planejada |
+| 8 | US-007 | Como usuário autenticado, quero editar meu perfil para manter suas informações atualizadas. | Baixa | Sprint 2 | Concluída |
+| 9 | US-010 | Como usuário autenticado, quero alterar o avatar do meu perfil para personalizá-lo. | Baixa | Sprint 2 | Concluída |
+| 10 | US-008 | Como usuário autenticado, quero excluir um perfil que não seja mais utilizado para manter minha conta organizada. | Baixa | Sprint 2 | Concluída |
 
-> A US-001 já possui implementação e documentação em `specs/001-user-registration/`, mas permanece em validação enquanto houver testes automatizados falhando.
+> US-001, US-002, US-006, US-007, US-008 e US-010 possuem implementação integrada à `main`. Elas permanecem no backlog para preservar o histórico da entrega, sem gerar nova implementação.
 
 ## Recorte funcional do MVP
 
@@ -45,7 +48,28 @@ Esta seção fornece somente o contexto de produto necessário para gerar boas e
 - **Tela:** perfis.
 - **Interação e dados:** informar o nome do perfil; a interface atribui um avatar padrão.
 - **Comportamento esperado:** associar e persistir o perfil na conta autenticada, exibir seu cartão e torná-lo o perfil ativo.
-- **Aceite resumido:** um perfil válido aparece e fica ativo após ser salvo e continua disponível após recarregar; nome vazio não é aceito. Editar, excluir e criar regras infantis são histórias separadas e não fazem parte deste recorte.
+- **Aceite resumido:** um perfil válido aparece e fica ativo após ser salvo e continua disponível após recarregar; nome vazio não é aceito. Editar, excluir, alterar avatar e criar regras infantis permanecem histórias separadas deste recorte.
+
+### US-007 — Editar perfil
+
+- **Tela:** edição de perfil.
+- **Interação e dados:** selecionar um perfil existente e alterar suas informações básicas.
+- **Comportamento esperado:** salvar as alterações localmente e exibir o perfil atualizado na seleção de perfis.
+- **Aceite resumido:** nome e avatar podem ser atualizados; as alterações permanecem no `localStorage` e aparecem na seleção de perfis.
+
+### US-010 — Alterar avatar
+
+- **Tela:** alteração de avatar.
+- **Interação e dados:** escolher um avatar entre as opções disponíveis para o perfil.
+- **Comportamento esperado:** salvar o avatar selecionado e refletir a mudança na seleção de perfis.
+- **Aceite resumido:** a lista de avatares é exibida; a escolha é persistida; o novo avatar aparece no perfil.
+
+### US-008 — Excluir perfil
+
+- **Tela:** exclusão de perfil.
+- **Interação e dados:** selecionar um perfil existente e confirmar sua exclusão.
+- **Comportamento esperado:** remover o perfil da persistência local e da lista de perfis somente após confirmação.
+- **Aceite resumido:** a exclusão exige confirmação e o perfil removido deixa de aparecer na seleção.
 
 ### US-011 — Pesquisa de conteúdo
 
@@ -77,20 +101,17 @@ Esta seção fornece somente o contexto de produto necessário para gerar boas e
 ## Dados compartilhados entre as histórias
 
 - **Conta:** nome, e-mail, credencial protegida conforme a spec existente e sessão local.
-- **Perfil:** nome e avatar padrão.
+- **Perfil:** nome e avatar padrão na criação, com edição e seleção de avatar disponíveis nas histórias já entregues.
 - **Conteúdo:** identificador, título, imagem, tipo, ano, classificação, sinopse e referência para um vídeo demonstrativo.
 
 Os dados podem ser locais e reduzidos. Não são necessários backend, banco de dados, serviço de streaming, integração externa ou painel para cadastrar conteúdos.
 
 ## Candidatas futuras
 
-Estas histórias são úteis, mas não pertencem aos Sprints atuais. Só devem voltar ao backlog ativo após a conclusão do MVP e nova priorização do Product Owner.
+Estas histórias são úteis, mas não pertencem aos Sprints atuais e ainda não foram implementadas. Só devem voltar ao backlog ativo após a conclusão do MVP e nova priorização do Product Owner.
 
 | ID | Funcionalidade | Prioridade atual | Sprint | Status |
 |---|---|---|---|---|
-| US-007 | Editar Perfil | Baixa | Não planejada | Futuro |
-| US-008 | Excluir Perfil | Baixa | Não planejada | Futuro |
-| US-010 | Alterar Avatar | Baixa | Não planejada | Futuro |
 | US-012 | Filtrar Conteúdo | Baixa | Não planejada | Futuro |
 | US-013 | Minha Lista | Baixa | Não planejada | Futuro |
 | US-018 | Continuar Assistindo | Baixa | Não planejada | Futuro |
